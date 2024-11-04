@@ -1,0 +1,14 @@
+.Footer {
+    background-color: blue;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 60px;
+    color: white;
+    text-align: center;
+}
+
+.Footer img {
+    width: 50px;
+    height: 50px;
+}
