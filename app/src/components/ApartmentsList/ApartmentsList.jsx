@@ -2,6 +2,7 @@ import './ApartmentsList.css'
 import apartmentsData from './../../data/apartments.json'
 import { useState } from 'react'
 import ApartmentCard from '../ApartmentCard/ApartmentCard'
+import NewApartmentForm from '../NewApartmentForm/NewApartmentForm'
 
 const ApartmentsList = () => {
 
@@ -12,12 +13,22 @@ const ApartmentsList = () => {
         setApartments(filteredApartments)
     }
 
+    const addNewApartment = (newApartment) => {
+        const newApartments = [newApartment, ...apartments]
+        setApartments(newApartments)
+    }
+
+
     return (
         <div className="ApartmentsList">
+            <NewApartmentForm
+                addNewApartment={addNewApartment}
+            />
             {
                 apartments.map(elm => {
                     return (
                         <ApartmentCard {...elm} removeApartment={removeApartment} key={elm.id} />
+
                     )
                 })
             }
